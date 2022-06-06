@@ -24,7 +24,6 @@ public class Reqover {
                 .body(build)
                 .post(serverUrl);
 
-        response.then().log().all();
         return response.then().extract().jsonPath().getString("resultsPath");
     }
 }
