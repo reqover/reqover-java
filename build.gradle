@@ -4,6 +4,8 @@ plugins {
 }
 
 archivesBaseName = 'reqover-java'
+group='io.reqover'
+version='0.0.2'
 
 repositories {
     mavenCentral()
