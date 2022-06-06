@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class CoverageInfo {
-    private String id = UUID.randomUUID().toString();
+    private String uuid = UUID.randomUUID().toString();
     private UrlPath urlPath;
     private String method;
     private String statusCode;
@@ -16,12 +16,12 @@ public class CoverageInfo {
 
     }
 
-    public String getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public UrlPath getUrlPath() {
