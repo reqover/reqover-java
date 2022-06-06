@@ -27,6 +27,10 @@ public class Reqover {
         publish(buildInfo.getResultsPath(), OUTPUT_DIRECTORY);
     }
 
+    public void publish(BuildInfo buildInfo, String resultsDir) {
+        publish(buildInfo.getResultsPath(), resultsDir);
+    }
+
     public BuildInfo createBuild(ReqoverBuild build) {
         return createBuild(String.format("%s/%s/builds", this.serverUrl, this.projectToken), build);
     }
