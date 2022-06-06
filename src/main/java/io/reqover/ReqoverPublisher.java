@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 import static io.reqover.rest.assured.SwaggerCoverage.OUTPUT_DIRECTORY;
 
-public class ReqoverPublisher {
+class ReqoverPublisher {
 
     private static Set<File> listFiles(File dir) {
         return Stream.of(Objects.requireNonNull(dir.listFiles()))
@@ -33,7 +33,7 @@ public class ReqoverPublisher {
         }
     }
 
-    public static void post(String url, String inputJson) {
+    private static void post(String url, String inputJson) {
         RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(inputJson)

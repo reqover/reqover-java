@@ -1,4 +1,4 @@
-package io.reqover.core.model;
+package io.reqover.core.model.coverage;
 
 public class QueryParameter {
     private String name;

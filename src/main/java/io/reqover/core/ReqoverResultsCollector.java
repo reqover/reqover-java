@@ -2,9 +2,9 @@ package io.reqover.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.reqover.core.model.CoverageInfo;
-import io.reqover.core.model.QueryParameter;
-import io.reqover.core.model.UrlPath;
+import io.reqover.core.model.coverage.CoverageInfo;
+import io.reqover.core.model.coverage.QueryParameter;
+import io.reqover.core.model.coverage.UrlPath;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 
