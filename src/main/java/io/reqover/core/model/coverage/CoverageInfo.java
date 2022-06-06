@@ -1,8 +1,10 @@
 package io.reqover.core.model.coverage;
 
 import java.util.List;
+import java.util.UUID;
 
 public class CoverageInfo {
+    private String id = UUID.randomUUID().toString();
     private UrlPath urlPath;
     private String method;
     private String statusCode;
@@ -12,6 +14,14 @@ public class CoverageInfo {
 
     public CoverageInfo() {
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public UrlPath getUrlPath() {
