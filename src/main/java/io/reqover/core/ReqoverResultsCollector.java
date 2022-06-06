@@ -21,10 +21,12 @@ import java.util.stream.Collectors;
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
 
 public class ReqoverResultsCollector {
-    public static final String OUTPUT_DIRECTORY = "reqover-results";
     public static final String COVERAGE_OUTPUT_FILE_SUFFIX = "-coverage.json";
+    private String resultsDir;
 
-    public ReqoverResultsCollector() {}
+    public ReqoverResultsCollector(String resultsDir) {
+        this.resultsDir = resultsDir;
+    }
 
     private String generateCoverageOutputName() {
         return UUID.randomUUID() + COVERAGE_OUTPUT_FILE_SUFFIX;
@@ -74,6 +76,6 @@ public class ReqoverResultsCollector {
         coverageInfo.setParameters(parameters);
         coverageInfo.setBody(body);
 
-        write(coverageInfo, Paths.get(OUTPUT_DIRECTORY));
+        write(coverageInfo, Paths.get(resultsDir));
     }
 }

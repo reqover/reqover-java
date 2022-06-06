@@ -9,7 +9,17 @@ import io.restassured.specification.FilterableResponseSpecification;
 
 public class SwaggerCoverage implements OrderedFilter {
 
-    private final ReqoverResultsCollector collector = new ReqoverResultsCollector();
+    public static final String OUTPUT_DIRECTORY = "reqover-results";
+
+    private final ReqoverResultsCollector collector;
+
+    public SwaggerCoverage() {
+        this(OUTPUT_DIRECTORY);
+    }
+
+    public SwaggerCoverage(String resultsDir) {
+        this.collector = new ReqoverResultsCollector(resultsDir);
+    }
 
     @Override
     public Response filter(FilterableRequestSpecification requestSpec, FilterableResponseSpecification responseSpec,
