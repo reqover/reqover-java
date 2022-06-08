@@ -30,6 +30,10 @@ public class Reqover {
         ReqoverPublisher.publish(serverUrl, resultsDir);
     }
 
+    public void publish(String serverUrl, String buildToken, String resultsDir) {
+        publish(String.format("%s/%s/results", serverUrl, buildToken), resultsDir);
+    }
+
     public void publish(BuildInfo buildInfo) {
         publish(buildInfo.getResultsPath(), OUTPUT_DIRECTORY);
     }
