@@ -1,9 +1,12 @@
 package io.reqover.core.model.build;
 
+import java.io.File;
+
 public class ReqoverBuild {
     private String name;
     private String swaggerUrl;
     private String serviceUrl;
+    private File specificationFile;
 
     public static ReqoverBuild of(String name, String serviceUrl, String swaggerUrl) {
         ReqoverBuild build = new ReqoverBuild();
@@ -11,6 +14,14 @@ public class ReqoverBuild {
         build.setServiceUrl(serviceUrl);
         build.setSwaggerUrl(swaggerUrl);
         return build;
+    }
+
+    public File getSpecificationFile() {
+        return specificationFile;
+    }
+
+    public void setSpecificationFile(File specificationFile) {
+        this.specificationFile = specificationFile;
     }
 
     public String getName() {
