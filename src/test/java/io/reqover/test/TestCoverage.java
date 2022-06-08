@@ -55,4 +55,11 @@ public class TestCoverage {
                 .queryParam("status", "sold")
                 .get("/v2/pet/findByStatus");
     }
+
+    @Test
+    void testCanCreatePet(){
+        setup()
+                .body("{\"name\": \"doggie\"}")
+                .post("/v2/pet");
+    }
 }
