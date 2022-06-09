@@ -5,17 +5,20 @@ import io.reqover.core.model.build.BuildInfo;
 import io.reqover.core.model.build.ReqoverBuild;
 import io.reqover.rest.assured.SwaggerCoverage;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 
 public class TestCoverage {
 
     private static final String REQOVER_RESULTS = "build/reqover-results";
+    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "ukm9x5zdkcfx");
     private static BuildInfo buildInfo;
-    private final static Reqover reqover = new Reqover("http://localhost:3000", "ukm9x5zdkcfx");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
@@ -57,9 +60,39 @@ public class TestCoverage {
     }
 
     @Test
-    void testCanCreatePet(){
+    void testCanCreatePet() {
         setup()
                 .body("{\"name\": \"doggie\"}")
                 .post("/v2/pet");
+    }
+
+    @Test
+    void testCanCreatePetWithEmptyBody() {
+        setup()
+                .contentType(ContentType.JSON)
+                .body("{}")
+                .post("/v2/pet");
+    }
+
+    @Test
+    void testCreatePetThrows400() {
+        setup()
+                .contentType(ContentType.JSON)
+                .body("''")
+                .post("/v2/pet");
+    }
+
+    @Test
+    void testCanLogUserWithQueryParams() {
+        setup().contentType(ContentType.JSON)
+                .queryParams(Map.of("username", "admin", "password", "admin"))
+                .get("/v2/user/login");
+    }
+
+    @Test
+    void testCanLogUserWithParams() {
+        setup().contentType(ContentType.JSON)
+                .params(Map.of("username", "demo", "password", "demo"))
+                .get("/v2/user/login");
     }
 }

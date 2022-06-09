@@ -8,7 +8,7 @@ public class CoverageInfo {
     private UrlPath urlPath;
     private String method;
     private String statusCode;
-    private List<QueryParameter> parameters;
+    private List<Parameter> parameters;
     private Object body;
     private String path;
 
@@ -50,12 +50,11 @@ public class CoverageInfo {
         this.statusCode = statusCode;
     }
 
-    public List<QueryParameter> getParameters() {
+    public List<Parameter> getParameters() {
         return parameters;
     }
 
-    public void setParameters(List<QueryParameter> parameters) {
-
+    public void setParameters(List<Parameter> parameters) {
         this.parameters = parameters;
     }
 

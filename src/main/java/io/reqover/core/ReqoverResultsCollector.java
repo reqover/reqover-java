@@ -3,7 +3,7 @@ package io.reqover.core;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.reqover.core.model.coverage.CoverageInfo;
-import io.reqover.core.model.coverage.QueryParameter;
+import io.reqover.core.model.coverage.Parameter;
 import io.reqover.core.model.coverage.UrlPath;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
@@ -63,17 +63,25 @@ public class ReqoverResultsCollector {
         String method = requestSpec.getMethod();
 
         Map<String, String> queryParams = requestSpec.getQueryParams();
+        Map<String, String> requestParams = requestSpec.getRequestParams();
 
-        List<QueryParameter> parameters = queryParams.entrySet()
-                .stream().map(it -> new QueryParameter(it.getKey(), it.getValue()))
+        List<Parameter> queryParameters = queryParams.entrySet()
+                .stream().map(it -> new Parameter(it.getKey(), it.getValue()))
                 .collect(Collectors.toList());
+
+        List<Parameter> requestParameters = requestParams.entrySet()
+                .stream().map(it -> new Parameter(it.getKey(), it.getValue()))
+                .collect(Collectors.toList());
+
+        queryParameters.addAll(requestParameters);
+
         Object body = requestSpec.getBody();
 
         CoverageInfo coverageInfo = new CoverageInfo();
         coverageInfo.setPath(path);
         coverageInfo.setStatusCode(String.valueOf(statusCode));
         coverageInfo.setMethod(method);
-        coverageInfo.setParameters(parameters);
+        coverageInfo.setParameters(queryParameters);
         coverageInfo.setBody(body);
 
         write(coverageInfo, Paths.get(resultsDir));
