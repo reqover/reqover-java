@@ -2,6 +2,9 @@ package io.reqover;
 
 import io.reqover.core.ReqoverResultsCollector;
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +18,8 @@ import java.util.stream.Stream;
 import static io.reqover.rest.assured.SwaggerCoverage.OUTPUT_DIRECTORY;
 
 class ReqoverPublisher {
+
+    private static final Logger logger = LoggerFactory.getLogger(ReqoverPublisher.class);
 
     private static Set<File> listFiles(File dir) {
         return Stream.of(Objects.requireNonNull(dir.listFiles()))
@@ -33,18 +38,19 @@ class ReqoverPublisher {
         }
     }
 
-    private static void post(String url, String inputJson) {
-        RestAssured.given()
+    private static Response post(String url, String inputJson) {
+        return RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(inputJson)
                 .post(url);
     }
 
     public static void publish(String serverUrl, String resultsDir) {
+        logger.info(String.format("About to publish Reqover results from folder %s", resultsDir));
         listFiles(new File(resultsDir)).forEach(it -> {
-            System.out.println(it.getName());
             String file = readFile(it);
-            post(serverUrl, file);
+            Response response = post(serverUrl, file);
+            logger.info(String.format("%s -> %s", it.getName(), response.statusCode()));
         });
     }
 

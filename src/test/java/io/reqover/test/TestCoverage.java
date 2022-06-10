@@ -18,20 +18,19 @@ public class TestCoverage {
 
     private static final String REQOVER_RESULTS = "build/reqover-results";
     private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "ukm9x5zdkcfx");
-    private static BuildInfo buildInfo;
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
     public static void setUp() {
-        ReqoverBuild build = ReqoverBuild.of("Master",
-                "https://petstore.swagger.io",
-                "https://petstore.swagger.io/v2/swagger.json");
-        buildInfo = reqover.createBuild(build, true);
         RestAssured.baseURI = "https://petstore.swagger.io";
     }
 
     @AfterAll
     public static void sendResults() {
+        ReqoverBuild build = ReqoverBuild.of("Master",
+                "https://petstore.swagger.io",
+                "https://petstore.swagger.io/v2/swagger.json");
+        BuildInfo buildInfo = reqover.createBuild(build, true);
         reqover.publish(buildInfo, REQOVER_RESULTS);
     }
 

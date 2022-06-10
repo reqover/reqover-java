@@ -7,6 +7,8 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +19,8 @@ import java.util.UUID;
 import static io.reqover.rest.assured.SwaggerCoverage.OUTPUT_DIRECTORY;
 
 public class Reqover {
+
+    private static final Logger logger = LoggerFactory.getLogger(Reqover.class);
 
     private final String serverUrl;
     private final String projectToken;
@@ -78,6 +82,8 @@ public class Reqover {
         Response response = request.post(serverUrl);
 
         JsonPath jsonPath = response.then().extract().jsonPath();
-        return new BuildInfo(jsonPath.getString("token"), jsonPath.getString("resultsPath"));
+        String token = jsonPath.getString("token");
+        logger.info(String.format("Project name: %s, token %s", build.getName(), token));
+        return new BuildInfo(token, jsonPath.getString("resultsPath"));
     }
 }
