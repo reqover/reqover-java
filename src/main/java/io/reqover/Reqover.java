@@ -69,6 +69,7 @@ public class Reqover {
     }
 
     public BuildInfo createBuild(String serverUrl, ReqoverBuild build) {
+        logger.info("About to create build: {}", build.getName());
         RequestSpecification request = RestAssured
                 .given()
                 .header("Content-Type", ContentType.MULTIPART)
@@ -87,7 +88,7 @@ public class Reqover {
 
         JsonPath jsonPath = response.then().extract().jsonPath();
         String token = jsonPath.getString("token");
-        logger.info(String.format("Project name: %s, token: %s", build.getName(), token));
+        logger.info("Token: {}", token);
         return new BuildInfo(token, jsonPath.getString("resultsPath"));
     }
 }
