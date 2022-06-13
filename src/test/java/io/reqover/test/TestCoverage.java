@@ -16,9 +16,9 @@ import java.util.Map;
 
 public class TestCoverage {
 
-    private static final String REQOVER_RESULTS = "build/reqover-results";
+//    private static final String REQOVER_RESULTS = "build/reqover-results";
     private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "ukm9x5zdkcfx");
-    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
+    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage();
 
     @BeforeAll
     public static void setUp() {
@@ -31,7 +31,7 @@ public class TestCoverage {
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);
-        reqover.publish(buildInfo, REQOVER_RESULTS);
+        reqover.publish(buildInfo);
     }
 
     private RequestSpecification setup() {

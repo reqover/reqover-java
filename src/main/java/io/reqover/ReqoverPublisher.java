@@ -46,7 +46,7 @@ class ReqoverPublisher {
     }
 
     public static void publish(String serverUrl, String resultsDir) {
-        logger.info(String.format("About to publish Reqover results from folder %s", resultsDir));
+        logger.info(String.format("About to publish Reqover results from folder %s to server %s", resultsDir, serverUrl));
         listFiles(new File(resultsDir)).forEach(it -> {
             String file = readFile(it);
             Response response = post(serverUrl, file);
