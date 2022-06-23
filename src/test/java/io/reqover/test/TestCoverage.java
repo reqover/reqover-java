@@ -78,6 +78,12 @@ public class TestCoverage {
     }
 
     @Test
+    void testDeletePetByNull() {
+        setup()
+                .delete("/pet/{petId}", "null");
+    }
+
+    @Test
     void testCanGetPetByStatus() {
         setup()
                 .queryParam("status", "sold")
