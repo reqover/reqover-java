@@ -48,6 +48,12 @@ public class TestCoverage {
     }
 
     @Test
+    void testGetPetWithNull() {
+        setup()
+                .get("/pet/{petId}", "null");
+    }
+
+    @Test
     void testGetPetById() {
         setup()
                 .get("/pet/{petId}", "9223372036854036000");
