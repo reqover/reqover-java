@@ -29,7 +29,7 @@ public class ReqoverResultsCollector {
     private String resultsDir;
 
     public ReqoverResultsCollector(String resultsDir) {
-        logger.info("Reqover results dir " + resultsDir);
+        logger.info("Reqover results dir: " + resultsDir);
         this.resultsDir = resultsDir;
     }
 
