@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +23,11 @@ class ReqoverPublisher {
     private static final Logger logger = LoggerFactory.getLogger(ReqoverPublisher.class);
 
     private static Set<File> listFiles(File dir) {
-        return Stream.of(Objects.requireNonNull(dir.listFiles()))
+        File[] listFiles = dir.listFiles();
+        if (listFiles == null) {
+            throw new RuntimeException("Can not find directory " + dir.getAbsolutePath());
+        }
+        return Stream.of(listFiles)
                 .filter(file -> !file.isDirectory() && file.getName()
                         .endsWith(ReqoverResultsCollector.COVERAGE_OUTPUT_FILE_SUFFIX))
                 .collect(Collectors.toSet());

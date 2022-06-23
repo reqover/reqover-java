@@ -7,6 +7,8 @@ import io.reqover.core.model.coverage.Parameter;
 import io.reqover.core.model.coverage.UrlPath;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -21,10 +23,13 @@ import java.util.stream.Collectors;
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
 
 public class ReqoverResultsCollector {
+
+    private static final Logger logger = LoggerFactory.getLogger(ReqoverResultsCollector.class);
     public static final String COVERAGE_OUTPUT_FILE_SUFFIX = "-coverage.json";
     private String resultsDir;
 
     public ReqoverResultsCollector(String resultsDir) {
+        logger.info("Reqover results dir " + resultsDir);
         this.resultsDir = resultsDir;
     }
 
