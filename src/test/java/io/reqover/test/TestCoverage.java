@@ -6,11 +6,12 @@ import io.reqover.core.model.build.ReqoverBuild;
 import io.reqover.rest.assured.SwaggerCoverage;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Map;
 
@@ -18,7 +19,7 @@ import java.util.Map;
 public class TestCoverage {
 
     private static final String REQOVER_RESULTS = "build/reqover-results";
-    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "9ed7hdskd7n2");
+    private final static Reqover reqover = new Reqover("http://localhost:3000", "d8vxyz43zqkv");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
@@ -41,10 +42,11 @@ public class TestCoverage {
                 .filter(swaggerCoverage);
     }
 
-    @Test
-    void testGetPet() {
+    @ParameterizedTest
+    @ValueSource(ints = {1, Integer.MIN_VALUE, Integer.MAX_VALUE})
+    void testGetPet(int value) {
         setup()
-                .get("/pet/{petId}", 1);
+                .get("/pet/{petId}", value);
     }
 
     @Test
@@ -53,24 +55,7 @@ public class TestCoverage {
                 .get("/pet/{petId}", "null");
     }
 
-    @Test
-    void testGetPetById() {
-        setup()
-                .get("/pet/{petId}", "9223372036854036000");
-    }
 
-    @Test
-    void testCanGetCreatedPet(){
-        Response response = setup()
-                .contentType(ContentType.JSON)
-                .body("{\"name\": \"sally\"}")
-                .post("/pet");
-
-        response.then().log().all();
-        String id = response.then().extract().jsonPath().getString("id");
-        setup()
-                .get("/pet/{petId}", id);
-    }
     @Test
     void testDeletePet() {
         setup()
