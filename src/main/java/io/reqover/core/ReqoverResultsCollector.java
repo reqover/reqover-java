@@ -26,10 +26,9 @@ public class ReqoverResultsCollector {
 
     private static final Logger logger = LoggerFactory.getLogger(ReqoverResultsCollector.class);
     public static final String COVERAGE_OUTPUT_FILE_SUFFIX = "-coverage.json";
-    private String resultsDir;
+    private final String resultsDir;
 
     public ReqoverResultsCollector(String resultsDir) {
-        logger.info("Reqover results dir: " + resultsDir);
         this.resultsDir = resultsDir;
     }
 

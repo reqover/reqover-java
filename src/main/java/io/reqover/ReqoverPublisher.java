@@ -7,11 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -54,8 +52,7 @@ class ReqoverPublisher {
         logger.info(String.format("About to publish Reqover results from folder %s to server %s", resultsDir, serverUrl));
         listFiles(new File(resultsDir)).forEach(it -> {
             String file = readFile(it);
-            Response response = post(serverUrl, file);
-            logger.info(String.format("%s -> %s", it.getName(), response.statusCode()));
+            post(serverUrl, file);
         });
     }
 

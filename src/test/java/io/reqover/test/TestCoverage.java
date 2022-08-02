@@ -19,18 +19,18 @@ import java.util.Map;
 public class TestCoverage {
 
     private static final String REQOVER_RESULTS = "build/reqover-results";
-    private final static Reqover reqover = new Reqover("http://localhost:3000", "d8vxyz43zqkv");
+    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "4zjud4ttejxk");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
     public static void setUp() {
-        RestAssured.baseURI = "http://localhost:8080";
-        RestAssured.basePath = "/api/v3";
+        RestAssured.baseURI = "https://petstore.swagger.io";
+//        RestAssured.basePath = "/api/v3";
     }
 
     @AfterAll
     public static void sendResults() {
-        ReqoverBuild build = ReqoverBuild.of("Master",
+        ReqoverBuild build = ReqoverBuild.of("PR-1",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);
@@ -131,3 +131,5 @@ public class TestCoverage {
                 .get("/store/inventory");
     }
 }
+
+
