@@ -14,7 +14,7 @@ public class SwaggerCoverageAsync extends CoverageFilter {
 
     private final ExecutorService service = Executors.newCachedThreadPool();
     private String serverUrl;
-    private boolean isEnabled;
+    private boolean logsEnabled;
 
     public SwaggerCoverageAsync() {
     }
@@ -23,12 +23,12 @@ public class SwaggerCoverageAsync extends CoverageFilter {
         this.serverUrl = serverUrl;
     }
 
-    public void setEnabled(boolean enabled) {
-        isEnabled = enabled;
-    }
-
     public void setServerUrl(String serverUrl) {
         this.serverUrl = serverUrl;
+    }
+
+    public void setLogsEnabled(boolean logsEnabled) {
+        this.logsEnabled = logsEnabled;
     }
 
     @Override
@@ -36,10 +36,8 @@ public class SwaggerCoverageAsync extends CoverageFilter {
                            FilterableResponseSpecification responseSpec,
                            FilterContext ctx) {
         final Response response = ctx.next(requestSpec, responseSpec);
-        if (isEnabled) {
-            CoverageInfo coverageInfo = collectCoverageInfo(requestSpec, response);
-            send(coverageInfo);
-        }
+        CoverageInfo coverageInfo = collectCoverageInfo(requestSpec, response);
+        send(coverageInfo);
         return response;
     }
 
@@ -50,15 +48,19 @@ public class SwaggerCoverageAsync extends CoverageFilter {
     }
 
     private void post(String url, CoverageInfo coverageInfo) {
-        RestAssured.given()
+        Response response = RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(coverageInfo)
-                .post(url).then().log().all();
+                .post(url);
+        if (logsEnabled) {
+            response.then().log().all();
+        }
     }
 
     public void waitUntilCompleted() {
         service.shutdown();
         while (!service.isTerminated()) {
+            // suppress
         }
     }
 }
