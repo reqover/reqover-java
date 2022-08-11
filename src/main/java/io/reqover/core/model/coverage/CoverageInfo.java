@@ -1,8 +1,11 @@
 package io.reqover.core.model.coverage;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 import java.util.UUID;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CoverageInfo {
     private String uuid = UUID.randomUUID().toString();
     private UrlPath urlPath;

@@ -1,8 +1,7 @@
 package io.reqover;
 
-import io.reqover.core.ReqoverResultsCollector;
+import io.reqover.core.ReqoverResultsWriter;
 import io.restassured.RestAssured;
-import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +26,7 @@ class ReqoverPublisher {
         }
         return Stream.of(listFiles)
                 .filter(file -> !file.isDirectory() && file.getName()
-                        .endsWith(ReqoverResultsCollector.COVERAGE_OUTPUT_FILE_SUFFIX))
+                        .endsWith(ReqoverResultsWriter.COVERAGE_OUTPUT_FILE_SUFFIX))
                 .collect(Collectors.toSet());
     }
 
@@ -41,8 +40,8 @@ class ReqoverPublisher {
         }
     }
 
-    private static Response post(String url, String inputJson) {
-        return RestAssured.given()
+    private static void post(String url, String inputJson) {
+        RestAssured.given()
                 .header("Content-Type", "application/json")
                 .body(inputJson)
                 .post(url);

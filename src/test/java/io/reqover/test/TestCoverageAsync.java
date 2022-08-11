@@ -3,7 +3,7 @@ package io.reqover.test;
 import io.reqover.Reqover;
 import io.reqover.core.model.build.BuildInfo;
 import io.reqover.core.model.build.ReqoverBuild;
-import io.reqover.rest.assured.SwaggerCoverage;
+import io.reqover.rest.assured.SwaggerCoverageAsync;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -16,30 +16,29 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.util.Map;
 
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
-public class TestCoverage {
+public class TestCoverageAsync {
 
-    private static final String REQOVER_RESULTS = "build/reqover-results";
     private final static Reqover reqover = new Reqover("http://localhost:3000", "4zjud4ttejxk");
-    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
+    private final static SwaggerCoverageAsync coverageAsync = new SwaggerCoverageAsync();
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
-//        RestAssured.basePath = "/api/v3";
-    }
-
-    @AfterAll
-    public static void sendResults() {
         ReqoverBuild build = ReqoverBuild.of("PR-1",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);
-        reqover.publish(buildInfo, REQOVER_RESULTS);
+        coverageAsync.setServerUrl(buildInfo.getResultsPath());
+    }
+
+    @AfterAll
+    public static void sendResults() {
+        coverageAsync.waitUntilCompleted();
     }
 
     private RequestSpecification setup() {
         return RestAssured.given()
-                .filter(swaggerCoverage);
+                .filter(coverageAsync);
     }
 
     @ParameterizedTest
@@ -68,17 +67,11 @@ public class TestCoverage {
                 .delete("/pet/{petId}", "null");
     }
 
-    @Test
-    void testCanGetPetByStatus() {
+    @ParameterizedTest
+    @ValueSource(strings = {"", "sold", "available"})
+    void testCanGetPetByStatus(String status) {
         setup()
-                .queryParam("status", "sold")
-                .get("/pet/findByStatus");
-    }
-
-    @Test
-    void testCanGetPetByStatusAvailable() {
-        setup()
-                .queryParam("status", "available")
+                .queryParam("status", status)
                 .get("/pet/findByStatus");
     }
 
