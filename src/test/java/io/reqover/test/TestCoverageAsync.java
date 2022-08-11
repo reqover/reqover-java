@@ -18,13 +18,13 @@ import java.util.Map;
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverageAsync {
 
-    private final static Reqover reqover = new Reqover("http://localhost:3000", "4zjud4ttejxk");
+    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "4zjud4ttejxk");
     private final static SwaggerCoverageAsync coverageAsync = new SwaggerCoverageAsync();
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
-        ReqoverBuild build = ReqoverBuild.of("PR-1",
+        ReqoverBuild build = ReqoverBuild.of("Async Master",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);

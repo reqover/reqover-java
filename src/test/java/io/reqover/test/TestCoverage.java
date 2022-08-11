@@ -19,7 +19,7 @@ import java.util.Map;
 public class TestCoverage {
 
     private static final String REQOVER_RESULTS = "build/reqover-results";
-    private final static Reqover reqover = new Reqover("http://localhost:3000", "4zjud4ttejxk");
+    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "4zjud4ttejxk");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
