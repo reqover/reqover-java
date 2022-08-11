@@ -24,6 +24,7 @@ public class TestCoverageAsync {
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
+        RestAssured.basePath = "/v2";
         ReqoverBuild build = ReqoverBuild.of("Async Master",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
@@ -121,7 +122,9 @@ public class TestCoverageAsync {
     @Test
     void testCanGetInventory() {
         setup().contentType(ContentType.JSON)
-                .get("/store/inventory");
+                .get("/store/inventory")
+                .then()
+                .statusCode(200);
     }
 }
 
