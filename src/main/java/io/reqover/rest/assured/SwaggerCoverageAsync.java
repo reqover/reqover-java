@@ -14,15 +14,17 @@ public class SwaggerCoverageAsync extends CoverageFilter {
 
     private final ExecutorService service = Executors.newCachedThreadPool();
     private String serverUrl;
+    private boolean isEnabled;
 
     public SwaggerCoverageAsync() {
     }
+
     public SwaggerCoverageAsync(String serverUrl) {
         this.serverUrl = serverUrl;
     }
 
-    public String getServerUrl() {
-        return serverUrl;
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 
     public void setServerUrl(String serverUrl) {
@@ -34,8 +36,10 @@ public class SwaggerCoverageAsync extends CoverageFilter {
                            FilterableResponseSpecification responseSpec,
                            FilterContext ctx) {
         final Response response = ctx.next(requestSpec, responseSpec);
-        CoverageInfo coverageInfo = collectCoverageInfo(requestSpec, response);
-        send(coverageInfo);
+        if (isEnabled) {
+            CoverageInfo coverageInfo = collectCoverageInfo(requestSpec, response);
+            send(coverageInfo);
+        }
         return response;
     }
 
