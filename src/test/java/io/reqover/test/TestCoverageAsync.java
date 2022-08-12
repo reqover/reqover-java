@@ -15,6 +15,22 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Map;
 
+class Pet {
+    private String name;
+
+    public Pet(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverageAsync {
 
@@ -86,6 +102,13 @@ public class TestCoverageAsync {
     void testCanCreatePet() {
         setup()
                 .body("{\"name\": \"doggie\"}")
+                .post("/pet");
+    }
+
+    @Test
+    void testCanCreatePetPojo() {
+        setup()
+                .body(new Pet("fromPojo"))
                 .post("/pet");
     }
 
