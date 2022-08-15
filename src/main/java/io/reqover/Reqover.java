@@ -32,6 +32,7 @@ public class Reqover {
 
     public void publish(String serverUrl, String resultsDir) {
         ReqoverPublisher.publish(serverUrl, resultsDir);
+        finishBuild(serverUrl);
     }
 
     public void publish(String serverUrl, String buildToken, String resultsDir) {
@@ -44,6 +45,15 @@ public class Reqover {
 
     public void publish(BuildInfo buildInfo, String resultsDir) {
         publish(buildInfo.getResultsPath(), resultsDir);
+
+    }
+
+    public void finishBuild(String resultsPath) {
+        RestAssured
+                .given()
+                .contentType(ContentType.JSON)
+                .body("{\"type\": \"complete\"}")
+                .post(resultsPath);
     }
 
     public BuildInfo createBuild(ReqoverBuild build) {
@@ -82,7 +92,7 @@ public class Reqover {
         }
 
         Response response = request.post(serverUrl);
-        if(response.statusCode() != 200) {
+        if (response.statusCode() != 200) {
             throw new RuntimeException(response.getBody().asString());
         }
 

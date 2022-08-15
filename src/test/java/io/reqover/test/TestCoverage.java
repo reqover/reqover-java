@@ -18,19 +18,22 @@ import java.util.Map;
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverage {
 
+    private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
+
     private static final String REQOVER_RESULTS = "build/reqover-results";
-    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "4zjud4ttejxk");
+    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "4zjud4ttejxk");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
+        RestAssured.basePath = "/v2";
 //        RestAssured.basePath = "/api/v3";
     }
 
     @AfterAll
     public static void sendResults() {
-        ReqoverBuild build = ReqoverBuild.of("PR-1",
+        ReqoverBuild build = ReqoverBuild.of("Sync-Java",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);

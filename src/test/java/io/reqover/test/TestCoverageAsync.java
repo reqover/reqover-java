@@ -34,23 +34,25 @@ class Pet {
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverageAsync {
 
-    private final static Reqover reqover = new Reqover("https://reqover-io.herokuapp.com", "4zjud4ttejxk");
+    private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
+//    private final static String REQOVER_SERVER_URL = "http://localhost:3000";
+    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "4zjud4ttejxk");
     private final static SwaggerCoverageAsync coverageAsync = new SwaggerCoverageAsync();
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
         RestAssured.basePath = "/v2";
-        ReqoverBuild build = ReqoverBuild.of("Async Master",
+        ReqoverBuild build = ReqoverBuild.of("Async-Java Master",
                 "https://petstore.swagger.io",
                 "https://petstore.swagger.io/v2/swagger.json");
         BuildInfo buildInfo = reqover.createBuild(build, true);
-        coverageAsync.setServerUrl(buildInfo.getResultsPath());
+        coverageAsync.setResultsPath(buildInfo.getResultsPath());
     }
 
     @AfterAll
     public static void sendResults() {
-        coverageAsync.waitUntilCompleted();
+        coverageAsync.waitUntilCompleted(reqover);
     }
 
     private RequestSpecification setup() {

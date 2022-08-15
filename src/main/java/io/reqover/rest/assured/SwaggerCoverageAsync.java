@@ -1,5 +1,6 @@
 package io.reqover.rest.assured;
 
+import io.reqover.Reqover;
 import io.reqover.core.model.coverage.CoverageInfo;
 import io.restassured.RestAssured;
 import io.restassured.filter.FilterContext;
@@ -13,18 +14,22 @@ import java.util.concurrent.Executors;
 public class SwaggerCoverageAsync extends CoverageFilter {
 
     private final ExecutorService service = Executors.newCachedThreadPool();
-    private String serverUrl;
+    private String resultsPath;
     private boolean logsEnabled;
 
     public SwaggerCoverageAsync() {
     }
 
-    public SwaggerCoverageAsync(String serverUrl) {
-        this.serverUrl = serverUrl;
+    public SwaggerCoverageAsync(String resultsPath) {
+        this.resultsPath = resultsPath;
     }
 
-    public void setServerUrl(String serverUrl) {
-        this.serverUrl = serverUrl;
+    public void setResultsPath(String resultsPath) {
+        this.resultsPath = resultsPath;
+    }
+
+    public String getResultsPath() {
+        return resultsPath;
     }
 
     public void setLogsEnabled(boolean logsEnabled) {
@@ -43,7 +48,7 @@ public class SwaggerCoverageAsync extends CoverageFilter {
 
     private void send(CoverageInfo coverageInfo) {
         service.execute(() -> {
-            post(this.serverUrl, coverageInfo);
+            post(this.resultsPath, coverageInfo);
         });
     }
 
@@ -57,10 +62,11 @@ public class SwaggerCoverageAsync extends CoverageFilter {
         }
     }
 
-    public void waitUntilCompleted() {
+    public void waitUntilCompleted(Reqover reqover) {
         service.shutdown();
         while (!service.isTerminated()) {
             // suppress
         }
+        reqover.finishBuild(getResultsPath());
     }
 }
