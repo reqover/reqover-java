@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public abstract class CoverageFilter implements OrderedFilter {
 
     protected CoverageInfo collectCoverageInfo(FilterableRequestSpecification requestSpec, Response response) {
-        int statusCode = response.statusCode();
+        Integer statusCode = response.statusCode();
         Map<String, String> unnamedPathParams = requestSpec.getUnnamedPathParams();
         String path = UrlPath.getPath(requestSpec.getUserDefinedPath(), unnamedPathParams);
 
@@ -35,12 +35,15 @@ public abstract class CoverageFilter implements OrderedFilter {
 
         Object body = requestSpec.getBody();
 
+        Object responseBody = response.getBody().as(Object.class);
+
         CoverageInfo coverageInfo = new CoverageInfo();
         coverageInfo.setPath(path);
         coverageInfo.setStatusCode(String.valueOf(statusCode));
         coverageInfo.setMethod(method);
         coverageInfo.setParameters(queryParameters);
         coverageInfo.setBody(body);
+        coverageInfo.setResponse(Map.of("status_code", statusCode, "body", responseBody));
 
         return coverageInfo;
     }
