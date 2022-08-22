@@ -43,7 +43,7 @@ public abstract class CoverageFilter implements OrderedFilter {
         coverageInfo.setMethod(method);
         coverageInfo.setParameters(queryParameters);
         coverageInfo.setBody(body);
-        coverageInfo.setResponse(Map.of("status_code", statusCode, "body", responseBody));
+        coverageInfo.setResponse(Map.of("statusCode", statusCode, "body", responseBody));
 
         return coverageInfo;
     }
