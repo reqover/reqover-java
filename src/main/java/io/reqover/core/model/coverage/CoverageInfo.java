@@ -2,7 +2,6 @@ package io.reqover.core.model.coverage;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -15,11 +14,29 @@ public class CoverageInfo {
     private String statusCode;
     private List<Parameter> parameters;
     private Object body;
+    private String basePath;
     private String path;
+    private String uri;
     private Map<String, Object> response;
 
     public CoverageInfo() {
 
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public String getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
     }
 
     public Map<String, Object> getResponse() {

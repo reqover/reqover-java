@@ -5,6 +5,7 @@ import io.reqover.core.model.build.BuildInfo;
 import io.reqover.core.model.build.ReqoverBuild;
 import io.reqover.rest.assured.SwaggerCoverage;
 import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.AfterAll;
@@ -42,6 +43,7 @@ public class TestCoverage {
 
     private RequestSpecification setup() {
         return RestAssured.given()
+                .filter(new RequestLoggingFilter())
                 .filter(swaggerCoverage);
     }
 
