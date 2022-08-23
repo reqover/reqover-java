@@ -7,6 +7,8 @@ import io.restassured.filter.OrderedFilter;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -16,7 +18,7 @@ public abstract class CoverageFilter implements OrderedFilter {
     protected CoverageInfo collectCoverageInfo(FilterableRequestSpecification requestSpec, Response response) {
         Integer statusCode = response.statusCode();
         Map<String, String> unnamedPathParams = requestSpec.getUnnamedPathParams();
-        String uri = requestSpec.getURI();
+        String uri = removeHostFromUri(requestSpec.getURI());
         String basePath = requestSpec.getBasePath();
         String path = UrlPath.getPath(requestSpec.getUserDefinedPath(), unnamedPathParams);
 
@@ -50,6 +52,16 @@ public abstract class CoverageFilter implements OrderedFilter {
         coverageInfo.setResponse(Map.of("statusCode", statusCode, "body", responseBody));
 
         return coverageInfo;
+    }
+
+    private String removeHostFromUri(String uri) {
+        try {
+            URI url = new URI(uri);
+            return url.getPath() + "?" + url.getQuery();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     @Override
