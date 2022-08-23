@@ -6,6 +6,7 @@ import io.reqover.core.model.coverage.UrlPath;
 import io.restassured.filter.OrderedFilter;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -57,7 +58,12 @@ public abstract class CoverageFilter implements OrderedFilter {
     private String removeHostFromUri(String uri) {
         try {
             URI url = new URI(uri);
-            return url.getPath() + "?" + url.getQuery();
+            String query = url.getQuery();
+            String path = url.getPath();
+            if (StringUtils.isBlank(query)) {
+                return path;
+            }
+            return path + "?" + query;
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
