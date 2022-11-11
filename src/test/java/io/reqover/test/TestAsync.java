@@ -1,6 +1,7 @@
 package io.reqover.test;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
@@ -21,6 +22,7 @@ class AsyncTask {
 
 }
 
+@Disabled
 public class TestAsync {
 
     private static final AsyncTask task = new AsyncTask();

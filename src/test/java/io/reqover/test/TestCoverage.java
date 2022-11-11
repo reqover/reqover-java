@@ -21,8 +21,8 @@ public class TestCoverage {
 
     private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
 
-    private static final String REQOVER_RESULTS = "build/reqover-results";
-    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "4zjud4ttejxk");
+    private static final String REQOVER_RESULTS = "reqover-results";
+    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "o5moiyopdmjs");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
@@ -32,14 +32,14 @@ public class TestCoverage {
 //        RestAssured.basePath = "/api/v3";
     }
 
-    @AfterAll
-    public static void sendResults() {
-        ReqoverBuild build = ReqoverBuild.of("Sync-Java",
-                "https://petstore.swagger.io",
-                "https://petstore.swagger.io/v2/swagger.json");
-        BuildInfo buildInfo = reqover.createBuild(build, true);
-        reqover.publish(buildInfo, REQOVER_RESULTS);
-    }
+//    @AfterAll
+//    public static void sendResults() {
+//        ReqoverBuild build = ReqoverBuild.of("PR-1",
+//                "https://petstore.swagger.io",
+//                "https://petstore.swagger.io/v2/swagger.json");
+//        BuildInfo buildInfo = reqover.createBuild(build, true);
+//        reqover.publish(buildInfo, REQOVER_RESULTS);
+//    }
 
     private RequestSpecification setup() {
         return RestAssured.given()

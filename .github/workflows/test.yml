@@ -1,0 +1,35 @@
+name: Publish to Github Registry on Tag
+
+on:
+  push:
+    push:
+      branches: [ "main" ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Build with Gradle
+        run: ./gradlew test
+
+      - name: Generate coverage report
+          run: |
+            docker run -v $PWD:/reqover \
+              -v $PWD/reqover-results:/tmp/data \
+              -v $PWD/swagger.json:/tmp/swagger.json \
+              reqover/reqover-cli generate -f /tmp/swagger.json -d /tmp/data -p /v2 --html
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: reqover-report
+          path: .reqover/report
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .reqover/report
