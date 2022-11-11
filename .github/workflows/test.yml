@@ -18,7 +18,7 @@ jobs:
         run: ./gradlew test
 
       - name: Generate coverage report
-          run: |
+        run: |
             docker run -v $PWD:/reqover \
               -v $PWD/reqover-results:/tmp/data \
               -v $PWD/swagger.json:/tmp/swagger.json \
