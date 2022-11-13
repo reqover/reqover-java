@@ -72,32 +72,32 @@
                                 <div
                                     class="progress-bar bg-danger"
                                     role="progressbar"
-                                    style="width: 70%"
+                                    style="width: 100%"
                                     aria-valuenow="15"
                                     aria-valuemin="0"
                                     aria-valuemax="100"
                                 >
-                                    70%
+                                    100%
                                 </div>
                                 <div
                                     class="progress-bar bg-warning"
                                     role="progressbar"
-                                    style="width: 25%"
+                                    style="width: 0%"
                                     aria-valuenow="30"
                                     aria-valuemin="0"
                                     aria-valuemax="100"
                                 >
-                                    25%
+                                    0%
                                 </div>
                                 <div
                                     class="progress-bar bg-success"
                                     role="progressbar"
-                                    style="width: 5%"
+                                    style="width: 0%"
                                     aria-valuenow="20"
                                     aria-valuemin="0"
                                     aria-valuemax="100"
                                 >
-                                    5%
+                                    0%
                                 </div>
                                 <div
                                     class="progress-bar bg-primary"
@@ -145,7 +145,7 @@
                                 aria-selected="false"
                             >
                                 Missing
-                                <span class="badge bg-danger rounded-pill">14</span>
+                                <span class="badge bg-danger rounded-pill">20</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
@@ -160,7 +160,7 @@
                                 aria-selected="false"
                             >
                                 Partial
-                                <span class="badge bg-warning rounded-pill">5</span>
+                                <span class="badge bg-warning rounded-pill">0</span>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
@@ -190,7 +190,7 @@
                                 aria-selected="false"
                             >
                                 Covered
-                                <span class="badge bg-success rounded-pill">1</span>
+                                <span class="badge bg-success rounded-pill">0</span>
                             </button>
                         </li>
                     </ul>
@@ -325,18 +325,18 @@
                     <span> POST </span>
                     /pet
                 </div>
-                <div class="col-2">2 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
                             class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 67%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            67
+                            0
                         </div>
                     </div>
                 </div>
@@ -367,30 +367,6 @@
                     
                 
                     
-                        
-                            <li class="list-group-item list-group-item-info">
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-exclamation-circle"></i>
-                                        HTTP status 400
-                                    </div>
-                                    <small>This status code is not declared in swagger specification</small>
-                                </div>
-                            </li>
-                            
-                    
-                        
-                            <li class="list-group-item list-group-item-info">
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-exclamation-circle"></i>
-                                        HTTP status 200
-                                    </div>
-                                    <small>This status code is not declared in swagger specification</small>
-                                </div>
-                            </li>
-                            
-                    
                 </ul>
             </div>
             
@@ -398,33 +374,16 @@
                 <div class="card-header">Parameters:</div>
                 <ul class="list-group list-group-flush">
                     
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In body parameter {body}
                         </div>
-                        
-                                
-                                
-                                    <div>
-                                        <span class="mb-2">Covered body</span> (400) 
-                                        <pre class="code-block">&#34;&#39;&#39;&#34;</pre> </div>    
-                                
-                        
-                                
-                                
-                                    <div>
-                                        <span class="mb-2">Covered body</span> (200) 
-                                        <pre class="code-block">&#34;{}&#34;</pre> </div>    
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
                     </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
                     
                 </ul>
             </div>
@@ -556,18 +515,18 @@
                     <span> GET </span>
                     /pet/findByStatus
                 </div>
-                <div class="col-2">3 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
                             class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 50%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            50
+                            0
                         </div>
                     </div>
                 </div>
@@ -588,6 +547,20 @@
                                 <div class="ms-2 me-auto">
                                     <div class="">
                                         <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
                                      <small><span class="response-description">Invalid status value</span></small> 
@@ -598,18 +571,6 @@
                     
                 
                     
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
-                                </div>
-                                 <small><span class="response-description">successful operation</span></small> 
-                            </div>
-                        </li>
-                            
-                    
                 </ul>
             </div>
             
@@ -617,35 +578,16 @@
                 <div class="card-header">Parameters:</div>
                 <ul class="list-group list-group-flush">
                     
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In query parameter {status}
                         </div>
-                        
-                                    
-                                <div><span>Covered status</span>: sold (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered status</span>: available (200)</div>
-                                
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
-                        <div><span class="key">type</span>: string</div>
-                        
-                        <div><span class="key">enum</span>: available,pending,sold</div>
-                        
-                        <div><span class="key">default</span>: available</div>
-                        
                     </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
                     
                 </ul>
             </div>
@@ -763,18 +705,18 @@
                     <span> GET </span>
                     /pet/{petId}
                 </div>
-                <div class="col-2">4 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
                             class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 33%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            33
+                            0
                         </div>
                     </div>
                 </div>
@@ -817,19 +759,21 @@
                         </div>
                     </li>
                     
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 404
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 404
+                                    </div>
+                                     <small><span class="response-description">Pet not found</span></small> 
                                 </div>
-                                 <small><span class="response-description">Pet not found</span></small> 
                             </div>
-                        </li>
-                            
+                        </div>
+                    </li>
+                    
+                
                     
                 </ul>
             </div>
@@ -838,39 +782,16 @@
                 <div class="card-header">Parameters:</div>
                 <ul class="list-group list-group-flush">
                     
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In path parameter {petId}
                         </div>
-                        
-                                    
-                                <div><span>Covered petId</span>: -2147483648 (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: 1 (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: null (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: 2147483647 (404)</div>
-                                
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
                     </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
                     
                 </ul>
             </div>
@@ -990,18 +911,18 @@
                     <span> DELETE </span>
                     /pet/{petId}
                 </div>
-                <div class="col-2">1 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
                             class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 50%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            50
+                            0
                         </div>
                     </div>
                 </div>
@@ -1030,19 +951,21 @@
                         </div>
                     </li>
                     
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 404
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 404
+                                    </div>
+                                     <small><span class="response-description">Pet not found</span></small> 
                                 </div>
-                                 <small><span class="response-description">Pet not found</span></small> 
                             </div>
-                        </li>
-                            
+                        </div>
+                    </li>
+                    
+                
                     
                 </ul>
             </div>
@@ -1051,24 +974,16 @@
                 <div class="card-header">Parameters:</div>
                 <ul class="list-group list-group-flush">
                     
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In path parameter {petId}
                         </div>
-                        
-                                    
-                                <div><span>Covered petId</span>: null (404)</div>
-                                
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
                     </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
                     
                 </ul>
             </div>
@@ -1411,18 +1326,18 @@
                     <span> GET </span>
                     /store/inventory
                 </div>
-                <div class="col-2">1 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
-                            class="progress-bar progress-bar-striped bg-success"
+                            class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 100%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            100
+                            0
                         </div>
                     </div>
                 </div>
@@ -1437,19 +1352,21 @@
                     
                 
                     
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
                                 </div>
-                                 <small><span class="response-description">successful operation</span></small> 
                             </div>
-                        </li>
-                            
+                        </div>
+                    </li>
+                    
+                
                     
                 </ul>
             </div>
@@ -1962,18 +1879,18 @@
                     <span> GET </span>
                     /user/login
                 </div>
-                <div class="col-2">2 calls</div>
+                <div class="col-2">0 calls</div>
                 <div class="col-2">
                     <div class="progress">
                         <div
                             class="progress-bar progress-bar-striped bg-warning"
                             role="progressbar"
-                            style="width: 50%"
+                            style="width: 0%"
                             aria-valuenow=""
                             aria-valuemin="0"
                             aria-valuemax="100"
                         >
-                            50
+                            0
                         </div>
                     </div>
                 </div>
@@ -1994,6 +1911,20 @@
                                 <div class="ms-2 me-auto">
                                     <div class="">
                                         <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
                                      <small><span class="response-description">Invalid username/password supplied</span></small> 
@@ -2004,18 +1935,6 @@
                     
                 
                     
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
-                                </div>
-                                 <small><span class="response-description">successful operation</span></small> 
-                            </div>
-                        </li>
-                            
-                    
                 </ul>
             </div>
             
@@ -2023,50 +1942,24 @@
                 <div class="card-header">Parameters:</div>
                 <ul class="list-group list-group-flush">
                     
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In query parameter {username}
                         </div>
-                        
-                                    
-                                <div><span>Covered username</span>: admin (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered username</span>: demo (200)</div>
-                                
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
                     </li>
                     
-                    <li class="list-group-item list-group-item-success">
+                    <li class="list-group-item list-group-item-danger">
                         <div class="mb-2">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-bug-fill"></i>
                             In query parameter {password}
                         </div>
-                        
-                                    
-                                <div><span>Covered password</span>: admin (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered password</span>: demo (200)</div>
-                                
-                                
-                        
-                        <hr>
                         <div>Required: true</div>
-                        
                     </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
                     
                 </ul>
             </div>
@@ -2354,7 +2247,7 @@
         >
             <div class="row w-100">
                 <div class="col-7 api-path">
-                    <span> PUT </span>
+                    <span> POST </span>
                     /pet
                 </div>
                 <div class="col-2">0 calls</div>
@@ -2376,6 +2269,87 @@
         </button>
     </h2>
     <div id="collapse-Missing-pet-1" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-1" data-bs-parent="#accordionpet">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 405
+                                    </div>
+                                     <small><span class="response-description">Invalid input</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
+                    
+                </ul>
+            </div>
+            
+            <div class="card mt-3">
+                <div class="card-header">Parameters:</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In body parameter {body}
+                        </div>
+                        <div>Required: true</div>
+                    </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-2">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-pet-2"
+            aria-expanded="true"
+            aria-controls="collapse-2"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> PUT </span>
+                    /pet
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-pet-2" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-2" data-bs-parent="#accordionpet">
         <div class="accordion-body">
             <div class="card">
                 <div class="card-header">Status codes:</div>
@@ -2452,14 +2426,109 @@
     </div>
 </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-2">
+    <h2 class="accordion-header" id="heading-3">
         <button
             class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapse-Missing-pet-2"
+            data-bs-target="#collapse-Missing-pet-3"
             aria-expanded="true"
-            aria-controls="collapse-2"
+            aria-controls="collapse-3"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> GET </span>
+                    /pet/findByStatus
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-pet-3" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-3" data-bs-parent="#accordionpet">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 400
+                                    </div>
+                                     <small><span class="response-description">Invalid status value</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
+                    
+                </ul>
+            </div>
+            
+            <div class="card mt-3">
+                <div class="card-header">Parameters:</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In query parameter {status}
+                        </div>
+                        <div>Required: true</div>
+                    </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-4">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-pet-4"
+            aria-expanded="true"
+            aria-controls="collapse-4"
         >
             <div class="row w-100">
                 <div class="col-7 api-path">
@@ -2484,7 +2553,7 @@
             </div>
         </button>
     </h2>
-    <div id="collapse-Missing-pet-2" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-2" data-bs-parent="#accordionpet">
+    <div id="collapse-Missing-pet-4" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-4" data-bs-parent="#accordionpet">
         <div class="accordion-body">
             <div class="card">
                 <div class="card-header">Status codes:</div>
@@ -2547,14 +2616,123 @@
     </div>
 </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-3">
+    <h2 class="accordion-header" id="heading-5">
         <button
             class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapse-Missing-pet-3"
+            data-bs-target="#collapse-Missing-pet-5"
             aria-expanded="true"
-            aria-controls="collapse-3"
+            aria-controls="collapse-5"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> GET </span>
+                    /pet/{petId}
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-pet-5" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-5" data-bs-parent="#accordionpet">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 400
+                                    </div>
+                                     <small><span class="response-description">Invalid ID supplied</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 404
+                                    </div>
+                                     <small><span class="response-description">Pet not found</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
+                    
+                </ul>
+            </div>
+            
+            <div class="card mt-3">
+                <div class="card-header">Parameters:</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In path parameter {petId}
+                        </div>
+                        <div>Required: true</div>
+                    </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-6">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-pet-6"
+            aria-expanded="true"
+            aria-controls="collapse-6"
         >
             <div class="row w-100">
                 <div class="col-7 api-path">
@@ -2579,7 +2757,7 @@
             </div>
         </button>
     </h2>
-    <div id="collapse-Missing-pet-3" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-3" data-bs-parent="#accordionpet">
+    <div id="collapse-Missing-pet-6" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-6" data-bs-parent="#accordionpet">
         <div class="accordion-body">
             <div class="card">
                 <div class="card-header">Status codes:</div>
@@ -2632,6 +2810,101 @@
                             In formData parameter {status}
                         </div>
                         <div>Required: false</div>
+                    </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-7">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-pet-7"
+            aria-expanded="true"
+            aria-controls="collapse-7"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> DELETE </span>
+                    /pet/{petId}
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-pet-7" class="accordion-collapse collapse" aria-labelledby="heading-Missing-pet-7" data-bs-parent="#accordionpet">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 400
+                                    </div>
+                                     <small><span class="response-description">Invalid ID supplied</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 404
+                                    </div>
+                                     <small><span class="response-description">Pet not found</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
+                    
+                </ul>
+            </div>
+            
+            <div class="card mt-3">
+                <div class="card-header">Parameters:</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In path parameter {petId}
+                        </div>
+                        <div>Required: true</div>
                     </li>
                     
                 </ul>
@@ -2956,6 +3229,69 @@
                     
                 </ul>
                 <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-3">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-store-3"
+            aria-expanded="true"
+            aria-controls="collapse-3"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> GET </span>
+                    /store/inventory
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-store-3" class="accordion-collapse collapse" aria-labelledby="heading-Missing-store-3" data-bs-parent="#accordionstore">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
                     
                 </ul>
             </div>
@@ -3466,7 +3802,7 @@
             <div class="row w-100">
                 <div class="col-7 api-path">
                     <span> GET </span>
-                    /user/logout
+                    /user/login
                 </div>
                 <div class="col-2">0 calls</div>
                 <div class="col-2">
@@ -3500,6 +3836,109 @@
                                 <div class="ms-2 me-auto">
                                     <div class="">
                                         <i class="bi bi-bug-fill"></i>
+                                        HTTP status 200
+                                    </div>
+                                     <small><span class="response-description">successful operation</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
+                                        HTTP status 400
+                                    </div>
+                                     <small><span class="response-description">Invalid username/password supplied</span></small> 
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                
+                    
+                </ul>
+            </div>
+            
+            <div class="card mt-3">
+                <div class="card-header">Parameters:</div>
+                <ul class="list-group list-group-flush">
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In query parameter {username}
+                        </div>
+                        <div>Required: true</div>
+                    </li>
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="mb-2">
+                            <i class="bi bi-bug-fill"></i>
+                            In query parameter {password}
+                        </div>
+                        <div>Required: true</div>
+                    </li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading-6">
+        <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-Missing-user-6"
+            aria-expanded="true"
+            aria-controls="collapse-6"
+        >
+            <div class="row w-100">
+                <div class="col-7 api-path">
+                    <span> GET </span>
+                    /user/logout
+                </div>
+                <div class="col-2">0 calls</div>
+                <div class="col-2">
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped bg-warning"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuenow=""
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        >
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </h2>
+    <div id="collapse-Missing-user-6" class="accordion-collapse collapse" aria-labelledby="heading-Missing-user-6" data-bs-parent="#accordionuser">
+        <div class="accordion-body">
+            <div class="card">
+                <div class="card-header">Status codes:</div>
+                <ul class="list-group list-group-flush">
+                    
+                
+                    
+                    <li class="list-group-item list-group-item-danger">
+                        <div class="row">
+                            <div class="col-12">                                
+                                <div class="ms-2 me-auto">
+                                    <div class="">
+                                        <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
                                      <small><span class="response-description">successful operation</span></small> 
@@ -3517,14 +3956,14 @@
     </div>
 </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-6">
+    <h2 class="accordion-header" id="heading-7">
         <button
             class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapse-Missing-user-6"
+            data-bs-target="#collapse-Missing-user-7"
             aria-expanded="true"
-            aria-controls="collapse-6"
+            aria-controls="collapse-7"
         >
             <div class="row w-100">
                 <div class="col-7 api-path">
@@ -3549,7 +3988,7 @@
             </div>
         </button>
     </h2>
-    <div id="collapse-Missing-user-6" class="accordion-collapse collapse" aria-labelledby="heading-Missing-user-6" data-bs-parent="#accordionuser">
+    <div id="collapse-Missing-user-7" class="accordion-collapse collapse" aria-labelledby="heading-Missing-user-7" data-bs-parent="#accordionuser">
         <div class="accordion-body">
             <div class="card">
                 <div class="card-header">Status codes:</div>
@@ -3608,641 +4047,7 @@
 
                         <div class="tab-pane fade show" id="partial" role="tabpanel" aria-labelledby="partial-tab">
                             <div class="accordion" id="accordionPartial">
-                                 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingpet">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-pet"
-            aria-expanded="true"
-            aria-controls="collapsepet"
-        >
-            pet
-        </button>
-    </h2>
-    <div id="collapse-Partial-pet" class="accordion-collapse collapse" aria-labelledby="headingpet" data-bs-parent="#accordionPartial">
-        <div class="accordion-body">
-            <div class="accordion" id="accordionpet">
-                 <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-0">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-pet-0"
-            aria-expanded="true"
-            aria-controls="collapse-0"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> POST </span>
-                    /pet
-                </div>
-                <div class="col-2">2 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-warning"
-                            role="progressbar"
-                            style="width: 67%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            67
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Partial-pet-0" class="accordion-collapse collapse" aria-labelledby="heading-Partial-pet-0" data-bs-parent="#accordionpet">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 405
-                                    </div>
-                                     <small><span class="response-description">Invalid input</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                
-                    
-                        
-                            <li class="list-group-item list-group-item-info">
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-exclamation-circle"></i>
-                                        HTTP status 400
-                                    </div>
-                                    <small>This status code is not declared in swagger specification</small>
-                                </div>
-                            </li>
-                            
-                    
-                        
-                            <li class="list-group-item list-group-item-info">
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-exclamation-circle"></i>
-                                        HTTP status 200
-                                    </div>
-                                    <small>This status code is not declared in swagger specification</small>
-                                </div>
-                            </li>
-                            
-                    
-                </ul>
-            </div>
-            
-            <div class="card mt-3">
-                <div class="card-header">Parameters:</div>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In body parameter {body}
-                        </div>
-                        
                                 
-                                
-                                    <div>
-                                        <span class="mb-2">Covered body</span> (400) 
-                                        <pre class="code-block">&#34;&#39;&#39;&#34;</pre> </div>    
-                                
-                        
-                                
-                                
-                                    <div>
-                                        <span class="mb-2">Covered body</span> (200) 
-                                        <pre class="code-block">&#34;{}&#34;</pre> </div>    
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                    </li>
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-1">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-pet-1"
-            aria-expanded="true"
-            aria-controls="collapse-1"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> GET </span>
-                    /pet/findByStatus
-                </div>
-                <div class="col-2">3 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-warning"
-                            role="progressbar"
-                            style="width: 50%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            50
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Partial-pet-1" class="accordion-collapse collapse" aria-labelledby="heading-Partial-pet-1" data-bs-parent="#accordionpet">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 400
-                                    </div>
-                                     <small><span class="response-description">Invalid status value</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
-                                </div>
-                                 <small><span class="response-description">successful operation</span></small> 
-                            </div>
-                        </li>
-                            
-                    
-                </ul>
-            </div>
-            
-            <div class="card mt-3">
-                <div class="card-header">Parameters:</div>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In query parameter {status}
-                        </div>
-                        
-                                    
-                                <div><span>Covered status</span>: sold (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered status</span>: available (200)</div>
-                                
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                        <div><span class="key">type</span>: string</div>
-                        
-                        <div><span class="key">enum</span>: available,pending,sold</div>
-                        
-                        <div><span class="key">default</span>: available</div>
-                        
-                    </li>
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-2">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-pet-2"
-            aria-expanded="true"
-            aria-controls="collapse-2"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> GET </span>
-                    /pet/{petId}
-                </div>
-                <div class="col-2">4 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-warning"
-                            role="progressbar"
-                            style="width: 33%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            33
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Partial-pet-2" class="accordion-collapse collapse" aria-labelledby="heading-Partial-pet-2" data-bs-parent="#accordionpet">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 200
-                                    </div>
-                                     <small><span class="response-description">successful operation</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 400
-                                    </div>
-                                     <small><span class="response-description">Invalid ID supplied</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 404
-                                </div>
-                                 <small><span class="response-description">Pet not found</span></small> 
-                            </div>
-                        </li>
-                            
-                    
-                </ul>
-            </div>
-            
-            <div class="card mt-3">
-                <div class="card-header">Parameters:</div>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In path parameter {petId}
-                        </div>
-                        
-                                    
-                                <div><span>Covered petId</span>: -2147483648 (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: 1 (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: null (404)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered petId</span>: 2147483647 (404)</div>
-                                
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                    </li>
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-3">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-pet-3"
-            aria-expanded="true"
-            aria-controls="collapse-3"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> DELETE </span>
-                    /pet/{petId}
-                </div>
-                <div class="col-2">1 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-warning"
-                            role="progressbar"
-                            style="width: 50%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            50
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Partial-pet-3" class="accordion-collapse collapse" aria-labelledby="heading-Partial-pet-3" data-bs-parent="#accordionpet">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 400
-                                    </div>
-                                     <small><span class="response-description">Invalid ID supplied</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 404
-                                </div>
-                                 <small><span class="response-description">Pet not found</span></small> 
-                            </div>
-                        </li>
-                            
-                    
-                </ul>
-            </div>
-            
-            <div class="card mt-3">
-                <div class="card-header">Parameters:</div>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In path parameter {petId}
-                        </div>
-                        
-                                    
-                                <div><span>Covered petId</span>: null (404)</div>
-                                
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                    </li>
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
- 
-            </div>
-        </div>
-    </div>
-</div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headinguser">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-user"
-            aria-expanded="true"
-            aria-controls="collapseuser"
-        >
-            user
-        </button>
-    </h2>
-    <div id="collapse-Partial-user" class="accordion-collapse collapse" aria-labelledby="headinguser" data-bs-parent="#accordionPartial">
-        <div class="accordion-body">
-            <div class="accordion" id="accordionuser">
-                 <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-0">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Partial-user-0"
-            aria-expanded="true"
-            aria-controls="collapse-0"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> GET </span>
-                    /user/login
-                </div>
-                <div class="col-2">2 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-warning"
-                            role="progressbar"
-                            style="width: 50%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            50
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Partial-user-0" class="accordion-collapse collapse" aria-labelledby="heading-Partial-user-0" data-bs-parent="#accordionuser">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                    <li class="list-group-item list-group-item-danger">
-                        <div class="row">
-                            <div class="col-12">                                
-                                <div class="ms-2 me-auto">
-                                    <div class="">
-                                        <i class="bi bi-bug-fill"></i>
-                                        HTTP status 400
-                                    </div>
-                                     <small><span class="response-description">Invalid username/password supplied</span></small> 
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
-                                </div>
-                                 <small><span class="response-description">successful operation</span></small> 
-                            </div>
-                        </li>
-                            
-                    
-                </ul>
-            </div>
-            
-            <div class="card mt-3">
-                <div class="card-header">Parameters:</div>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
-                <ul class="list-group list-group-flush">
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In query parameter {username}
-                        </div>
-                        
-                                    
-                                <div><span>Covered username</span>: admin (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered username</span>: demo (200)</div>
-                                
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                    </li>
-                    
-                    <li class="list-group-item list-group-item-success">
-                        <div class="mb-2">
-                            <i class="bi bi-check2"></i>
-                            In query parameter {password}
-                        </div>
-                        
-                                    
-                                <div><span>Covered password</span>: admin (200)</div>
-                                
-                                
-                        
-                                    
-                                <div><span>Covered password</span>: demo (200)</div>
-                                
-                                
-                        
-                        <hr>
-                        <div>Required: true</div>
-                        
-                    </li>
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
- 
-            </div>
-        </div>
-    </div>
-</div>
- 
                             </div>
                         </div>
 
@@ -4254,89 +4059,7 @@
 
                         <div class="tab-pane fade show" id="covered" role="tabpanel" aria-labelledby="full-tab">
                             <div class="accordion" id="accordionFull">
-                                 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingstore">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Full-store"
-            aria-expanded="true"
-            aria-controls="collapsestore"
-        >
-            store
-        </button>
-    </h2>
-    <div id="collapse-Full-store" class="accordion-collapse collapse" aria-labelledby="headingstore" data-bs-parent="#accordionFull">
-        <div class="accordion-body">
-            <div class="accordion" id="accordionstore">
-                 <div class="accordion-item">
-    <h2 class="accordion-header" id="heading-0">
-        <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-Full-store-0"
-            aria-expanded="true"
-            aria-controls="collapse-0"
-        >
-            <div class="row w-100">
-                <div class="col-7 api-path">
-                    <span> GET </span>
-                    /store/inventory
-                </div>
-                <div class="col-2">1 calls</div>
-                <div class="col-2">
-                    <div class="progress">
-                        <div
-                            class="progress-bar progress-bar-striped bg-success"
-                            role="progressbar"
-                            style="width: 100%"
-                            aria-valuenow=""
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                        >
-                            100
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </h2>
-    <div id="collapse-Full-store-0" class="accordion-collapse collapse" aria-labelledby="heading-Full-store-0" data-bs-parent="#accordionstore">
-        <div class="accordion-body">
-            <div class="card">
-                <div class="card-header">Status codes:</div>
-                <ul class="list-group list-group-flush">
-                    
-                
-                    
-                
-                    
-                        
-                        <li class="list-group-item list-group-item-success">
-                            <div class="ms-2 me-auto">
-                                <div class="">
-                                    <i class="bi bi-check2"></i>
-                                    HTTP status 200
-                                </div>
-                                 <small><span class="response-description">successful operation</span></small> 
-                            </div>
-                        </li>
-                            
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</div>
- 
-            </div>
-        </div>
-    </div>
-</div>
- 
+                                
                             </div>
                         </div>
 
