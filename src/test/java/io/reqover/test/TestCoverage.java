@@ -19,15 +19,16 @@ import java.util.Map;
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverage {
 
-    private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
+//    private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
 
-    private static final String REQOVER_RESULTS = "reqover-results";
-    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "o5moiyopdmjs");
-    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
+//    private static final String REQOVER_RESULTS = "reqover-results";
+//    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "o5moiyopdmjs");
+//    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
 
     @BeforeAll
     public static void setUp() {
-        RestAssured.baseURI = "https://petstore.swagger.io";
+//        RestAssured.baseURI = "https://petstore.swagger.io";
+        RestAssured.baseURI = "http://localhost:8080";
         RestAssured.basePath = "/v2";
 //        RestAssured.basePath = "/api/v3";
     }
@@ -43,8 +44,8 @@ public class TestCoverage {
 
     private RequestSpecification setup() {
         return RestAssured.given()
-                .filter(new RequestLoggingFilter())
-                .filter(swaggerCoverage);
+                .filter(new RequestLoggingFilter());
+//                .filter(swaggerCoverage);
     }
 
     @ParameterizedTest

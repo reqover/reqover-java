@@ -14,6 +14,15 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+
+      - name: Start recorder
+        run: |
+          docker run -d -p 8080:3000 \
+            -v $PWD:/reqover --name reqover reqover/reqover-cli record -t https://petstore.swagger.io
+
+      - name: Show containers
+        run: docker run reqover/reqover-cli --version && docker logs reqover
+
       - name: Build with Gradle
         run: ./gradlew test
 
