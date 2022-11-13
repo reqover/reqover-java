@@ -5,8 +5,6 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Bootstrap CSS -->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" /> -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <title>Reqover</title>
@@ -52,6 +50,27 @@
 
             .response-description{
                 text-transform: capitalize;
+            }
+
+            .params-meta-info {
+                margin: 0.5rem 0;
+            }
+
+            .covered-parameter-btn, .covered-parameter-body {
+                background-color: #d1e7dd;
+            }
+
+            .covered-parameter-item:first-of-type {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            .params-accordion {
+                --bs-accordion-inner-border-radius: 0;
+            }
+
+            .accordion-button:focus {
+                box-shadow: none;
             }
         </style>
     </head>
@@ -258,7 +277,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -278,33 +297,50 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {additionalMetadata}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {additionalMetadata}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {file}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {file}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -355,7 +391,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -375,17 +411,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -436,7 +477,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -450,7 +491,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -464,7 +505,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -484,17 +525,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -545,7 +591,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -559,7 +605,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -579,17 +625,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {status}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {status}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -640,7 +691,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -654,7 +705,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -674,17 +725,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {tags}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {tags}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -735,7 +791,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -749,7 +805,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -763,7 +819,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -783,17 +839,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -844,7 +905,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -864,33 +925,50 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {name}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {name}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {status}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {status}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -941,7 +1019,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -955,7 +1033,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -975,17 +1053,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1057,7 +1140,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -1071,7 +1154,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1091,17 +1174,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1152,7 +1240,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -1166,7 +1254,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1180,7 +1268,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -1200,17 +1288,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {orderId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {orderId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1261,7 +1354,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1275,7 +1368,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -1295,17 +1388,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {orderId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {orderId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1356,7 +1454,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -1440,7 +1538,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -1460,17 +1558,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1521,7 +1624,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -1541,17 +1644,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1602,7 +1710,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -1616,7 +1724,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1630,7 +1738,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -1650,17 +1758,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1711,7 +1824,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1725,7 +1838,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -1745,25 +1858,36 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1814,7 +1938,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1828,7 +1952,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -1848,17 +1972,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -1909,7 +2038,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -1923,7 +2052,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -1943,25 +2072,36 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {password}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {password}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2012,7 +2152,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -2075,7 +2215,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -2095,17 +2235,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2183,7 +2328,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -2203,33 +2348,50 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {additionalMetadata}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {additionalMetadata}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {file}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {file}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2280,7 +2442,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -2300,17 +2462,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2361,7 +2528,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -2375,7 +2542,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -2389,7 +2556,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -2409,17 +2576,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2470,7 +2642,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -2484,7 +2656,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -2504,17 +2676,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {status}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {status}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2565,7 +2742,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -2579,7 +2756,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -2599,17 +2776,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {tags}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {tags}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2660,7 +2842,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -2674,7 +2856,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -2688,7 +2870,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -2708,17 +2890,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2769,7 +2956,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 405
                                     </div>
@@ -2789,33 +2976,50 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {name}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {name}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In formData parameter {status}
-                        </div>
-                        <div>Required: false</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In formData parameter {status}
+                                    </div>
+                                </div>
+                                <small>Required: false</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2866,7 +3070,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -2880,7 +3084,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -2900,17 +3104,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {petId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {petId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -2982,7 +3191,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -2996,7 +3205,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3016,17 +3225,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3077,7 +3291,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -3091,7 +3305,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3105,7 +3319,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -3125,17 +3339,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {orderId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {orderId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3186,7 +3405,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3200,7 +3419,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -3220,17 +3439,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {orderId}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {orderId}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3281,7 +3505,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -3365,7 +3589,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -3385,17 +3609,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3446,7 +3675,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -3466,17 +3695,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3527,7 +3761,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -3541,7 +3775,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3555,7 +3789,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -3575,17 +3809,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3636,7 +3875,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3650,7 +3889,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -3670,25 +3909,36 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3739,7 +3989,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3753,7 +4003,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 404
                                     </div>
@@ -3773,17 +4023,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In path parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In path parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3834,7 +4089,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 200
                                     </div>
@@ -3848,7 +4103,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status 400
                                     </div>
@@ -3868,25 +4123,36 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {username}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {username}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In query parameter {password}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In query parameter {password}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
@@ -3937,7 +4203,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -4000,7 +4266,7 @@
                         <div class="row">
                             <div class="col-12">                                
                                 <div class="ms-2 me-auto">
-                                    <div class="">
+                                    <div>
                                         <i class="bi bi-bug-fill"></i>
                                         HTTP status default
                                     </div>
@@ -4020,17 +4286,22 @@
                 <ul class="list-group list-group-flush">
                     
                     <li class="list-group-item list-group-item-danger">
-                        <div class="mb-2">
-                            <i class="bi bi-bug-fill"></i>
-                            In body parameter {body}
-                        </div>
-                        <div>Required: true</div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="ms-2 me-auto">
+                                    <div>
+                                        <i class="bi bi-bug-fill"></i>
+                                        In body parameter {body}
+                                    </div>
+                                </div>
+                                <small>Required: true</small>
+                            </div>
+                        </div>    
                     </li>
                     
                 </ul>
-                <ul class="list-group list-group-flush">
-                    
-                </ul>
+
+                
             </div>
             
         </div>
