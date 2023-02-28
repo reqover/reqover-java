@@ -23,12 +23,12 @@ public class TestCoverage {
 
 //    private static final String REQOVER_RESULTS = "reqover-results";
 //    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "o5moiyopdmjs");
-//    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage(REQOVER_RESULTS);
+    private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage();
 
     @BeforeAll
     public static void setUp() {
-//        RestAssured.baseURI = "https://petstore.swagger.io";
-        RestAssured.baseURI = "http://localhost:8080";
+        RestAssured.baseURI = "https://petstore.swagger.io";
+//        RestAssured.baseURI = "http://localhost:8080";
         RestAssured.basePath = "/v2";
 //        RestAssured.basePath = "/api/v3";
     }
@@ -44,8 +44,8 @@ public class TestCoverage {
 
     private RequestSpecification setup() {
         return RestAssured.given()
-                .filter(new RequestLoggingFilter());
-//                .filter(swaggerCoverage);
+                .filter(new RequestLoggingFilter())
+                .filter(swaggerCoverage);
     }
 
     @ParameterizedTest

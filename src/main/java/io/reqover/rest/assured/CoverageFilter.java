@@ -39,8 +39,12 @@ public abstract class CoverageFilter implements OrderedFilter {
         queryParameters.addAll(requestParameters);
 
         Object body = requestSpec.getBody();
-
-        Object responseBody = response.getBody().as(Object.class);
+        Object responseBody = null;
+        try {
+            responseBody = response.getBody().as(Object.class);
+        } catch (Exception e) {
+            //System.err.println("Error parsing response body "+e);
+        }
 
         CoverageInfo coverageInfo = new CoverageInfo();
         coverageInfo.setUri(uri);
@@ -50,7 +54,9 @@ public abstract class CoverageFilter implements OrderedFilter {
         coverageInfo.setMethod(method);
         coverageInfo.setParameters(queryParameters);
         coverageInfo.setBody(body);
-        coverageInfo.setResponse(Map.of("statusCode", statusCode, "body", responseBody));
+        if (responseBody != null) {
+            coverageInfo.setResponse(Map.of("statusCode", statusCode, "body", responseBody));
+        }
 
         return coverageInfo;
     }
