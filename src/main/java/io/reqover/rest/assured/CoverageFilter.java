@@ -9,9 +9,9 @@ import io.restassured.specification.FilterableRequestSpecification;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public abstract class CoverageFilter implements OrderedFilter {
@@ -19,9 +19,11 @@ public abstract class CoverageFilter implements OrderedFilter {
     protected CoverageInfo collectCoverageInfo(FilterableRequestSpecification requestSpec, Response response) {
         Integer statusCode = response.statusCode();
         Map<String, String> unnamedPathParams = requestSpec.getUnnamedPathParams();
-        String uri = removeHostFromUri(requestSpec.getURI());
+        URI requestURI = convertUriStringToURI(requestSpec.getURI());
+
+        String uri = removeHostFromUri(Objects.requireNonNull(requestURI));
         String basePath = requestSpec.getBasePath();
-        String path = UrlPath.getPath(requestSpec.getUserDefinedPath(), unnamedPathParams);
+        String path = requestURI.getPath();
 
         String method = requestSpec.getMethod();
 
@@ -61,19 +63,21 @@ public abstract class CoverageFilter implements OrderedFilter {
         return coverageInfo;
     }
 
-    private String removeHostFromUri(String uri) {
+    private URI convertUriStringToURI(String uri) {
         try {
-            URI url = new URI(uri);
-            String query = url.getQuery();
-            String path = url.getPath();
-            if (StringUtils.isBlank(query)) {
-                return path;
-            }
-            return path + "?" + query;
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
+            return new URI(uri);
+        } catch (Exception e) {
+            throw new RuntimeException("Can not parse URI " + uri + " " + e);
         }
-        return "";
+    }
+
+    private String removeHostFromUri(URI uri) {
+        String query = uri.getQuery();
+        String path = uri.getPath();
+        if (StringUtils.isBlank(query)) {
+            return path;
+        }
+        return path + "?" + query;
     }
 
     @Override
