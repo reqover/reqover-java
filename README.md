@@ -27,3 +27,12 @@ import io.reqover.rest.assured.SwaggerCoverage;
 RestAssured.given()
         .filter(new SwaggerCoverage());
 ```
+
+Generate html report:
+
+```
+docker run \
+-v $PWD/reqover-results:/tmp/data \
+-v $PWD/swagger.json:/tmp/swagger.json \
+reqover/reqover-cli generate -f /tmp/swagger.json -d /tmp/data -p /v2 --html
+```
