@@ -26,20 +26,32 @@ test {
     ignoreFailures = true
 }
 
+//publishing {
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            url = uri("https://maven.pkg.github.com/reqover/reqover-java")
+//            credentials {
+//                username = project.findProperty("gpr.user") ?: System.getenv("GH_USER")
+//                password = project.findProperty("gpr.key") ?: System.getenv("GH_TOKEN")
+//            }
+//        }
+//    }
+//    publications {
+//        gpr(MavenPublication) {
+//            from(components.java)
+//        }
+//    }
+//}
+
 publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/reqover/reqover-java")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GH_USER")
-                password = project.findProperty("gpr.key") ?: System.getenv("GH_TOKEN")
-            }
-        }
-    }
     publications {
-        gpr(MavenPublication) {
-            from(components.java)
+        mavenJava(MavenPublication) {
+            groupId = 'io.reqover'
+            artifactId = 'reqover-java'
+            version = '0.2.7'
+
+            from components.java
         }
     }
 }
