@@ -1,14 +1,10 @@
 package io.reqover.test;
 
-import io.reqover.Reqover;
-import io.reqover.core.model.build.BuildInfo;
-import io.reqover.core.model.build.ReqoverBuild;
 import io.reqover.rest.assured.SwaggerCoverage;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,28 +15,13 @@ import java.util.Map;
 // Code of service https://github.com/swagger-api/swagger-petstore/blob/master/src/main/java/io/swagger/petstore/controller/PetController.java
 public class TestCoverage {
 
-//    private final static String REQOVER_SERVER_URL = "https://reqover-io.herokuapp.com";
-
-//    private static final String REQOVER_RESULTS = "reqover-results";
-//    private final static Reqover reqover = new Reqover(REQOVER_SERVER_URL, "o5moiyopdmjs");
     private final SwaggerCoverage swaggerCoverage = new SwaggerCoverage();
 
     @BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
-//        RestAssured.baseURI = "http://localhost:8080";
         RestAssured.basePath = "/v2";
-//        RestAssured.basePath = "/api/v3";
     }
-
-//    @AfterAll
-//    public static void sendResults() {
-//        ReqoverBuild build = ReqoverBuild.of("PR-1",
-//                "https://petstore.swagger.io",
-//                "https://petstore.swagger.io/v2/swagger.json");
-//        BuildInfo buildInfo = reqover.createBuild(build, true);
-//        reqover.publish(buildInfo, REQOVER_RESULTS);
-//    }
 
     private RequestSpecification setup() {
         return RestAssured.given()
