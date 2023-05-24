@@ -31,7 +31,7 @@ RestAssured.given()
 Generate html report:
 
 ```
- docker run -v $PWD:/reqover \
+docker run -v $PWD:/reqover \
 -v $PWD/.reqover:/tmp/data \
 -v $PWD/swagger.json:/tmp/swagger.json \
 reqover/reqover-cli generate -f /tmp/swagger.json -d /tmp/data/reqover-results -p /v2 --html
