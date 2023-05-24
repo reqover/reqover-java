@@ -9,7 +9,7 @@ import io.restassured.specification.FilterableResponseSpecification;
 
 public class SwaggerCoverage extends CoverageFilter {
 
-    public static final String OUTPUT_DIRECTORY = "reqover-results";
+    public static final String OUTPUT_DIRECTORY = ".reqover/reqover-results";
 
     private final ReqoverResultsWriter writer;
 
