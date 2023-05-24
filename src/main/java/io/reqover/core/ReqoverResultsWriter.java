@@ -47,37 +47,4 @@ public class ReqoverResultsWriter {
             throw new RuntimeException("Could not write Swagger", e);
         }
     }
-
-//    public void collect(FilterableRequestSpecification requestSpec, Response response){
-//        int statusCode = response.statusCode();
-//        Map<String, String> unnamedPathParams = requestSpec.getUnnamedPathParams();
-//        String path = UrlPath.getPath(requestSpec.getUserDefinedPath(), unnamedPathParams);
-//
-//        String method = requestSpec.getMethod();
-//
-//        Map<String, String> queryParams = requestSpec.getQueryParams();
-//        Map<String, String> requestParams = requestSpec.getRequestParams();
-//
-//        List<Parameter> queryParameters = queryParams.entrySet()
-//                .stream().map(it -> new Parameter(it.getKey(), it.getValue()))
-//                .collect(Collectors.toList());
-//
-//        List<Parameter> requestParameters = requestParams.entrySet()
-//                .stream().map(it -> new Parameter(it.getKey(), it.getValue()))
-//                .collect(Collectors.toList());
-//
-//        queryParameters.addAll(requestParameters);
-//
-//        Object body = requestSpec.getBody();
-//
-//        CoverageInfo coverageInfo = new CoverageInfo();
-//        coverageInfo.setPath(path);
-//        coverageInfo.setStatusCode(String.valueOf(statusCode));
-//        coverageInfo.setMethod(method);
-//        coverageInfo.setParameters(queryParameters);
-//        coverageInfo.setBody(body);
-//
-//        write(coverageInfo, Paths.get(resultsDir));
-//
-//    }
 }
