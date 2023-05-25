@@ -3,10 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-archivesBaseName = 'reqover-java'
-group='io.reqover'
-version='0.2.6'
-
 repositories {
     mavenCentral()
 }
@@ -14,8 +10,7 @@ repositories {
 dependencies {
     implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.1.0'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
-    implementation 'org.slf4j:slf4j-api:1.7.36'
-    implementation 'ch.qos.logback:logback-classic:1.2.11'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
@@ -26,30 +21,12 @@ test {
     ignoreFailures = true
 }
 
-//publishing {
-//    repositories {
-//        maven {
-//            name = "GitHubPackages"
-//            url = uri("https://maven.pkg.github.com/reqover/reqover-java")
-//            credentials {
-//                username = project.findProperty("gpr.user") ?: System.getenv("GH_USER")
-//                password = project.findProperty("gpr.key") ?: System.getenv("GH_TOKEN")
-//            }
-//        }
-//    }
-//    publications {
-//        gpr(MavenPublication) {
-//            from(components.java)
-//        }
-//    }
-//}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'io.reqover'
             artifactId = 'reqover-java'
-            version = '0.2.7'
+            version = '0.2.8'
 
             from components.java
         }
