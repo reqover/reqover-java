@@ -25,7 +25,7 @@ public class ReqoverResultsWriter {
         return UUID.randomUUID() + COVERAGE_OUTPUT_FILE_SUFFIX;
     }
 
-    private void createDirectories(final Path directory) {
+    public static void createDirectories(final Path directory) {
         try {
             Files.createDirectories(directory);
         } catch (IOException e) {

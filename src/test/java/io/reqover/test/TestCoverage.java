@@ -1,5 +1,6 @@
 package io.reqover.test;
 
+import io.reqover.Reqover;
 import io.reqover.rest.assured.SwaggerCoverage;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -21,6 +22,7 @@ public class TestCoverage {
     public static void setUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
         RestAssured.basePath = "/v2";
+        Reqover.dumpSpec("https://petstore.swagger.io/v2/swagger.json");
     }
 
     private RequestSpecification setup() {
