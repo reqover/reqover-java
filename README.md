@@ -6,14 +6,14 @@ Add dependency:
 
 ```
 <repositories>
-    <repository>
-	    <id>jitpack.io</id>
+    	<repository>
+	    	<id>jitpack.io</id>
 		<url>https://jitpack.io</url>
 	</repository>
 </repositories>
 
 <dependency>
-    <groupId>com.github.reqover</groupId>
+    	<groupId>com.github.reqover</groupId>
 	<artifactId>reqover-java</artifactId>
 	<version>v0.2.8</version>
 </dependency>
